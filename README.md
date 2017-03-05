@@ -35,9 +35,11 @@ userName=root
 password=
 
 
-4. Deploy the folder EmployeeDBMS from the repository. 
+4. Deploy the folder EmployeeDBMS from the repository in the Tomcat. 
 
 Please find EmployeeWebApplication doc file. I have attached the screen shots for my application.
+
+P.S. In my local it is : -   http://localhost:8080/EmployeeDBMS/index.jsp 
 
 
 
