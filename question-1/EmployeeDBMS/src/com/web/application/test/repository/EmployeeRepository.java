@@ -36,43 +36,6 @@ public class EmployeeRepository {
 		}
 	}
 	
-	public boolean findByUserName(String userName) {
-		try {
-			PreparedStatement prepStatement = dbConnection.prepareStatement("select count(*) from employee where userName = ?");
-			prepStatement.setString(1, userName);	
-						
-			ResultSet result = prepStatement.executeQuery();
-			if (result != null) {	
-				while (result.next()) {
-					if (result.getInt(1) == 1) {
-						return true;
-					}				
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-	
-	public boolean findByLogin(String userName, String password) {
-		try {
-			PreparedStatement prepStatement = dbConnection.prepareStatement("select password from employee where userName = ?");
-			prepStatement.setString(1, userName);			
-			
-			ResultSet result = prepStatement.executeQuery();
-			if (result != null) {
-				while (result.next()) {
-					if (result.getString(1).equals(password)) {
-						return true;
-					}
-				}				
-			}			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
 	
 	public List<Employee> getAll() {
 		List<Employee> stList=null;
